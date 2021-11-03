@@ -1,0 +1,23 @@
+{
+  "id": "2910758",
+  "name": "project-practice",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "109785",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "7597925",
+      "name": "24gl-arrowDown2",
+      "font_class": "arrow-down",
+      "unicode": "eb69",
+      "unicode_decimal": 60265
+    }
+  ]
+}

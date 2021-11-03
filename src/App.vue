@@ -8,6 +8,8 @@
     <my-link href="http://baidu.com" target="_blank" type="success"
       >baidu</my-link
     >
+
+    <Selector :data="selectorData" @setItemVaule="setItemVaule" />
   </div>
 </template>
 
@@ -43,10 +45,43 @@ export default {
       console.log(index, item, '当前项')
     }
     const curIdx = ref(1) // 默认值
+
+    const selectorData = [
+      {
+        id: 1,
+        value: 'react',
+        text: 'React'
+      },
+      {
+        id: 2,
+        value: 'vue',
+        text: 'Vue'
+      },
+      {
+        id: 3,
+        value: 'angular',
+        text: 'Angular'
+      },
+      {
+        id: 4,
+        value: 'react-hooks',
+        text: 'React-Hooks'
+      },
+      {
+        id: 5,
+        value: 'vue-router',
+        text: 'Vue-Router'
+      }
+    ]
+    const setItemVaule = (value) => {
+      console.log(value)
+    }
     return {
       curIdx,
       data,
-      change
+      change,
+      setItemVaule,
+      selectorData
     }
   }
 }

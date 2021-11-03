@@ -3,14 +3,14 @@ import Link from './Link'
 
 const MyUI = {}
 
-const MySelect = {}
-const MyLink = {}
-MySelect.install = Vue => Vue.component(Select.name, Select)
-MyLink.install = Vue => Vue.component(Link.name, Link)
-export {
-  MySelect,
-  MyLink
-}
+// const MySelect = {}
+// const MyLink = {}
+// MySelect.install = Vue => Vue.component(Select.name, Select)
+// MyLink.install = Vue => Vue.component(Link.name, Link)
+// export {
+//   MySelect,
+//   MyLink
+// }
 
 const COMPONENTS = [
   Select,
