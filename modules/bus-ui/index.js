@@ -1,8 +1,9 @@
 import Selector from './Selector'
-const COMPONENTS =  [
-    Selector
-]
-let JsAppUI = {};
+import Carousel from './Carousel'
+import CarItem from './Carousel/CarItem.vue'
+
+const COMPONENTS = [Selector, Carousel, CarItem]
+let JsAppUI = {}
 
 JsAppUI.install = function(Vue, options) {
     console.log(options)
@@ -11,5 +12,4 @@ JsAppUI.install = function(Vue, options) {
     })
 }
 
-
-export default JsAppUI;
+export default JsAppUI

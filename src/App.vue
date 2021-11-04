@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <my-select
       :data="data"
       :callback="change"
@@ -10,12 +10,27 @@
     >
 
     <Selector :data="selectorData" @setItemVaule="setItemVaule" />
+    <div class="container">
+      <Carousel
+        :autoplay="true"
+        :duration="3000"
+        :inital="0"
+        :hasDot="true"
+        :hasDirector="true"
+      >
+        <car-item v-for="(item, index) of carData" :key="index">
+          <img :src="require(`../mock/img/${item.img_name}`)" />
+        </car-item>
+      </Carousel>
+    </div>
   </div>
 </template>
 
 <script>
 // import MySelect from '../modules/my-ui/Select'
 // import MyLink from '../modules/my-ui/Link'
+import carData from '../mock/carousel.data'
+import selectorData from '../mock/selectData'
 import { ref } from 'vue'
 export default {
   name: 'App',
@@ -46,33 +61,6 @@ export default {
     }
     const curIdx = ref(1) // 默认值
 
-    const selectorData = [
-      {
-        id: 1,
-        value: 'react',
-        text: 'React'
-      },
-      {
-        id: 2,
-        value: 'vue',
-        text: 'Vue'
-      },
-      {
-        id: 3,
-        value: 'angular',
-        text: 'Angular'
-      },
-      {
-        id: 4,
-        value: 'react-hooks',
-        text: 'React-Hooks'
-      },
-      {
-        id: 5,
-        value: 'vue-router',
-        text: 'Vue-Router'
-      }
-    ]
     const setItemVaule = (value) => {
       console.log(value)
     }
@@ -81,11 +69,17 @@ export default {
       data,
       change,
       setItemVaule,
-      selectorData
+      selectorData,
+      carData
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.container {
+  width: 520px;
+  height: 280px;
+  margin: 200px auto;
+}
 </style>
