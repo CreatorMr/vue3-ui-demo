@@ -11,14 +11,6 @@
         </template>
       </tree-menu>
     </div>
-    <my-select
-      :data="data"
-      :callback="change"
-      :currentIndex="curIdx"
-    ></my-select>
-    <my-link href="http://baidu.com" target="_blank" type="success"
-      >baidu</my-link
-    >
 
     <Selector :data="selectorData" @setItemVaule="setItemVaule" />
     <div class="container">
@@ -33,18 +25,25 @@
           <img :src="require(`../mock/img/${item.img_name}`)" />
         </car-item>
       </Carousel>
+
+      <my-select
+        :data="data"
+        :callback="change"
+        :currentIndex="curIdx"
+      ></my-select>
+      <my-link href="http://baidu.com" target="_blank" type="success"
+        >baidu</my-link
+      >
     </div>
   </div>
 </template>
 
 <script>
-// import MySelect from '../modules/my-ui/Select'
-// import MyLink from '../modules/my-ui/Link'
 import carData from '../mock/carousel.data'
 import selectorData from '../mock/selectData'
+import treeMenuData from '../mock/treeMenu'
 import { ref } from 'vue'
 
-import treeMenuData from '../mock/treeMenu'
 export default {
   name: 'App',
   // components: {
