@@ -1,8 +1,12 @@
 import Selector from './Selector'
 import Carousel from './Carousel'
 import CarItem from './Carousel/CarItem.vue'
-
-const COMPONENTS = [Selector, Carousel, CarItem]
+import TreeMenu from './TreeMenu'
+import MenuItem from './TreeMenu/MenuItem.vue'
+import SubMenu from './TreeMenu/SubMenu.vue'
+import ReSubMenu from './TreeMenu/ReSubMenu.vue'
+import './resets.css'
+const COMPONENTS = [Selector, Carousel, CarItem, TreeMenu, MenuItem, SubMenu, ReSubMenu]
 let JsAppUI = {}
 
 JsAppUI.install = function(Vue, options) {

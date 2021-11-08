@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <div class="side-bar">
+      <tree-menu>
+        <template v-for="item of treeMenuData">
+          <menu-item v-if="!item.children" :key="item.id">
+            {{ item.title }}
+            <a href="https://baidu.com">dd</a>
+          </menu-item>
+          <re-sub-menu :key="item.id" v-else :data="item"></re-sub-menu>
+        </template>
+      </tree-menu>
+    </div>
     <my-select
       :data="data"
       :callback="change"
@@ -32,6 +43,8 @@
 import carData from '../mock/carousel.data'
 import selectorData from '../mock/selectData'
 import { ref } from 'vue'
+
+import treeMenuData from '../mock/treeMenu'
 export default {
   name: 'App',
   // components: {
@@ -70,7 +83,8 @@ export default {
       change,
       setItemVaule,
       selectorData,
-      carData
+      carData,
+      treeMenuData
     }
   }
 }
@@ -81,5 +95,9 @@ export default {
   width: 520px;
   height: 280px;
   margin: 200px auto;
+}
+.side-bar {
+  width: 300px;
+  margin-bottom: 40px;
 }
 </style>
