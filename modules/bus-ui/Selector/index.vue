@@ -5,14 +5,18 @@
       :value="inputValue"
       @searchOptions="searchOptions"
     />
-    <SelectorMenu :data="data" @setItemVaule="setItemVaule" :searchValue="searchValue" />
+    <SelectorMenu
+      :data="data"
+      @setItemVaule="setItemVaule"
+      :searchValue="searchValue"
+    />
   </div>
 </template>
 
 <script>
 import SelectorInput from './InInput.vue'
 import SelectorMenu from './Menu.vue'
-import focus from '../../directives/focus'
+import { focus } from '../../directives'
 import { reactive, toRefs } from 'vue'
 export default {
   name: 'Selector',

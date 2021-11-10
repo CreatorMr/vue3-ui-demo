@@ -1,12 +1,12 @@
 export default {
     mounted(el) {
         console.log(el)
-        const oSelectInput = el.querySelector('.select-input'),
+        const oSelectInput = el.querySelector('.selector-input'),
             oSelectorMenu = el.querySelector('.selector-menu')
 
-        const oInput = el.querySelector('input'),
-            oPlaceHolder = el.querySelector('label'),
-            oIcon = el.querySelector('span')
+        const oInput = oSelectInput.querySelector('input'),
+            oPlaceHolder = oSelectInput.querySelector('label'),
+            oIcon = oSelectInput.querySelector('span')
 
         oInput.addEventListener(
             'focus',
