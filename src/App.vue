@@ -25,7 +25,18 @@
           <img :src="require(`../mock/img/${item.img_name}`)" />
         </car-item>
       </Carousel>
-
+      <div class="magnifier-wrapper">
+        <Magnifier
+          :link="link"
+          :blank="blank"
+          :imgUrl="imgUrl"
+          :altImg="altImg"
+          :imgWidth="imgWidth"
+          :imgHeight="imgHeight"
+          :magWidth="magWidth"
+          :magHeight="magHeight"
+        />
+      </div>
       <my-select
         :data="data"
         :callback="change"
@@ -42,8 +53,10 @@
 import carData from '../mock/carousel.data'
 import selectorData from '../mock/selectData'
 import treeMenuData from '../mock/treeMenu'
-import { ref } from 'vue'
-
+import { reactive, ref, toRefs } from 'vue'
+// https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2Fmn02%2F123120152324%2F201231152324-0.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639151324&t=59b80e871c6781a16041b79417ceab6c
+// https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2Fmn02%2F091920213343%2F200919213343-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639151429&t=0db7e65531b134996799f2b0abea5bbb
+// 512 787  576
 export default {
   name: 'App',
   // components: {
@@ -51,6 +64,17 @@ export default {
   //   MyLink
   // },
   setup() {
+    const state = reactive({
+      imgUrl:
+        ' https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.jj20.com%2Fup%2Fallimg%2Fmn02%2F091920213343%2F200919213343-5.jpg&refer=http%3A%2F%2Fpic.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1639151429&t=0db7e65531b134996799f2b0abea5bbb',
+      blank: true,
+      link: 'www.baidu.com',
+      imgWidth: 375,
+      imgHeight: 576,
+      magWidth: 100,
+      magHeight: 100,
+      altImg: '氧气'
+    })
     const data = [
       {
         id: 1,
@@ -83,7 +107,8 @@ export default {
       setItemVaule,
       selectorData,
       carData,
-      treeMenuData
+      treeMenuData,
+      ...toRefs(state)
     }
   }
 }
@@ -98,5 +123,10 @@ export default {
 .side-bar {
   width: 300px;
   margin-bottom: 40px;
+}
+
+.magnifier-wrapper {
+  width: 375px;
+  margin: 100px auto;
 }
 </style>

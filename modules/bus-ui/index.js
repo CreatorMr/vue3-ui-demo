@@ -5,8 +5,11 @@ import TreeMenu from './TreeMenu'
 import MenuItem from './TreeMenu/MenuItem.vue'
 import SubMenu from './TreeMenu/SubMenu.vue'
 import ReSubMenu from './TreeMenu/ReSubMenu.vue'
+import Magnifier from './Magnifier'
+
+
 import './resets.css'
-const COMPONENTS = [Selector, Carousel, CarItem, TreeMenu, MenuItem, SubMenu, ReSubMenu]
+const COMPONENTS = [Selector, Carousel, CarItem, TreeMenu, MenuItem, SubMenu, ReSubMenu, Magnifier]
 let JsAppUI = {}
 
 JsAppUI.install = function(Vue, options) {
