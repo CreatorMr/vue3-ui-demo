@@ -25,6 +25,12 @@
           <img :src="require(`../mock/img/${item.img_name}`)" />
         </car-item>
       </Carousel>
+      
+      <Stars 
+      :num="3"
+      :size="20"
+      @getStarNum="getStarNum"
+      />
       <div class="magnifier-wrapper">
         <Magnifier
           :link="link"
@@ -100,6 +106,9 @@ export default {
     const setItemVaule = (value) => {
       console.log(value)
     }
+    const getStarNum = (num) => {
+      console.log(num)
+    }
     return {
       curIdx,
       data,
@@ -108,7 +117,8 @@ export default {
       selectorData,
       carData,
       treeMenuData,
-      ...toRefs(state)
+      ...toRefs(state),
+      getStarNum
     }
   }
 }
