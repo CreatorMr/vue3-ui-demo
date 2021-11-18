@@ -17,3 +17,7 @@ yarn build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+npm install -g commitizen
+commitizen init cz-conventional-changelog --save --save-exact
